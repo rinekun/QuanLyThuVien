@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/* màu sắc */
+
+:root {
+    --black: black;
+    --white: white;
+    --background: #f6f6f6;
+    --gray: #D9D9D9;
+    --nav: rgba(0, 0, 0, 0.80);
+    ;
+    --green: #025959;
+    --orange: #F25C05;
+    /* font size */
+    --headings: 24px;
+    --subHeading: 16px;
+    --bodyText: 13px;
+    --inputField: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: unset;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* bỏ nút tăng số input */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+
+/* end number */
+
+p.alert-error {
+    font-size: 13px;
+    color: red;
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+
+span.noti-suc {
+    font-size: 13px;
+    color: green;
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+
+.success {
+    position: relative;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: #0a3622;
+}
+
+.danger {
+    position: relative;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: red;
+}
