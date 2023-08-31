@@ -1,11 +1,22 @@
 
 <?php include '../index/head.php' ?>
 <?php include '../index/nav.php' ?>
+<?php
+if (isset($_POST['add_tl'])) {
+    $tenTL = mysqli_real_escape_string($conn, $_POST['tenTL']);
+
+    $select_TL_name =  mysqli_query($conn, "SELECT*FROM `the_loai`") or die('query failed');
+
+
+        $insert_TL = mysqli_query($conn, "INSERT INTO `the_loai` (`the_loai`) 
+       VALUES ('$tenTL')") or die('query failed');
+       echo '<script>alert("Thêm ok rồi đó")</script>';
+}
+?>
 
 <section class="main_content dashboard_part">
     <?php 
-        include '../index/userAdmin.php';
-    
+        include '../index/userAdmin.php'; 
     ?>
 
 
@@ -18,22 +29,16 @@
                     <div class="white_box mb_30">
                         <div class="box_header ">
                             <div class="main-title">
-                                <h3 class="mb-0">Loại Sản Phẩm</h3>
+                                <h3 class="mb-0">Thể loại sách</h3>
                             </div>
                         </div>
-                        <form>
+                        <form method="post">
                             <div class="mb-3">
-                                <label class="form-label" for="exampleFormControlInput1">Tên loại</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1">
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="exampleFormControlInput1">Nhãn Hiệu</label>
-                                <input type="file" class="form-control" id="inputGroupFile01">
-                    
+                                <label class="form-label" for="exampleFormControlInput1">Tên thể loại</label>
+                                <input type="text" class="form-control" id="inputGroupFile01" name="tenTL">
                             </div>
                             <div class="mb-3">
-                            <input type="submit" class="btn btn-info" id="inputGroupFile01" style="float:right" value="CẬP NHẬT">
+                            <input type="submit" class="btn btn-info" id="inputGroupFile01" name="add_tl" style="float:right" value="Thêm thể loại">
                             </div>
                         </form>
                     </div>

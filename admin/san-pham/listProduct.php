@@ -75,17 +75,7 @@ if (isset($_GET['delete'])) {
 
 
                                 <?php
-                                //  $item_per_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 4;
-                                //  $current_page = !empty($_GET['page']) ? $_GET['page'] : 1;
-
-                                //  $offset = ($current_page - 1) * $item_per_page;
-
                                 $select_products = mysqli_query($conn, "SELECT*FROM `product`") or die('query failed');
-
-                                // $totalrecords  = mysqli_query($conn, "SELECT*FROM `product`");
-                                //  $totalrecords = $totalrecords->num_rows;
-                                //  $totalrecords = ceil($totalrecords / $item_per_page);
-
                                 $stt = 1;
                                 if (mysqli_num_rows($select_products) > 0) {
                                     while ($fetch_products = mysqli_fetch_assoc($select_products)) {

@@ -7,11 +7,11 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $admin_id = $_SESSION['admin_name'];
 if (!isset($admin_id)) {
-    header('location:./dang_nhap.php');
+    header('location:./dang-nhap.php');
 }
 if (isset($_POST['logouts'])) {
     session_destroy();
-    header('location:../../dang_nhap.php');
+    header('location:../../dang-nhap.php');
 }
 
 ?>
@@ -30,15 +30,15 @@ if (isset($_POST['logouts'])) {
 
             <a class="has-arrow" href="#" aria-expanded="false">
                 <img src="../../admin/asset/img/menu-icon/2.svg" alt>
-                <span>Quản lý sản phẩm</span>
+                <span>Quản lý sách</span>
             </a>
             <ul>
-                <!-- <li><a href="#">Loại sản Phẩm </a>
+                <li><a href="#">Thể loại</a>
                     <ul>
                         <li><a href="../../admin/loai/addType.php">Thêm Loại</a></li>
-                        <li><a href="../../admin/loai/listType.php">Danh Sach Loại</a></li>
+                        <li><a href="../../admin/loai/listType.php">Danh Sách Loại</a></li>
                     </ul>
-                </li> -->
+                </li>
                 <li><a href="#">Sản phẩm</a>
                     <ul>
                         <li><a href="../../admin/san-pham/addProduct.php">Thêm sản phẩm</a></li>

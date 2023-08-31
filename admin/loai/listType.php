@@ -3,10 +3,16 @@
 <section class="main_content dashboard_part">
     <?php
     include '../index/userAdmin.php';
-
+    ob_start();
     ?>
 
-
+<?php 
+if (isset($_GET['delete'])) {
+    $delete_id = $_GET['delete'];
+    mysqli_query($conn, "DELETE FROM `the_loai` WHERE id='$delete_id'") or die('query failed');
+    header('location: listType.php');
+}
+?>
 
     <div class="main_content_iner ">
         <div class="container-fluid plr_30 body_white_bg pt_30">
@@ -27,7 +33,7 @@
                                     </div>
                                 </div>
                                 <div class="add_button ms-2">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#addcategory" class="btn_1">Add New</a>
+                                    <a href="addType.php" data-bs-toggle="modal" data-bs-target="#addcategory" class="btn_1">Add New</a>
                                 </div>
                             </div>
                         </div>
@@ -35,39 +41,32 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">STT</th>
-                                        <th scope="col">Tên Loại</th>
-                                        <th scope="col">Mã Loại</th>
-                                        <th scope="col">Trạng Thái</th>
-
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Tên thể loại</th>
 
                                     </tr>
                                 </thead>
+                                 <?php
+                                $select_TL = mysqli_query($conn, "SELECT*FROM `the_loai`") or die('query failed');
+                        
+                                if (mysqli_num_rows($select_TL) > 0) {
+                                    while ($fetch_TL = mysqli_fetch_assoc($select_TL)) {
+                                ?>
                                 <tbody>
                                     <tr>
-                                        <th scope="row"> <a href="#" class="question_content"> title here 1</a></th>
-                                        <td>Category name</td>
-                                        <td>1000</td>
-                                        <td>Hiện</td>
+                                        <td><?php echo $fetch_TL['id']  ?></td>
+                                        <td><?php echo $fetch_TL['the_loai']  ?></td>
 
                                         <td>
-                                            <a href="#" class="status_btn">sữa</a>
-                                            <a href="#" class="status_btn" style="background-color: red;">Xóa</a>
+                                            <a href="updateType.php?edit=<?php echo $fetch_TL['id']; ?>" class="status_btn">Sửa</a>
+                                            <a href="listType.php?delete=<?php echo $fetch_TL['id']; ?>" class="status_btn" style="background-color: red;">Xóa</a>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"> <a href="#" class="question_content"> title here 2</a></th>
-                                        <td>Category name</td>
-                                        <td>1000</td>
-                                        <td>Hiện</td>
-
-                                        <td>
-                                            <a href="#" class="status_btn">sữa</a>
-                                            <a href="#" class="status_btn" style="background-color: red;">Xóa</a>
-                                        </td>
-
                                     </tr>
                                 </tbody>
+                                <?php
+                                    }
+                                }
+                                ?>
                             </table>
                         </div>
                     </div>

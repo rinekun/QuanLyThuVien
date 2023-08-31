@@ -7,11 +7,11 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $admin_id = $_SESSION['admin_name'];
 if (!isset($admin_id)) {
-    header('location:./dang_nhap.php');
+    header('location:./dang-nhap.php');
 }
 if (isset($_POST['logouts'])) {
     session_destroy();
-    header('location:../../dang_nhap.php');
+    header('location:../../dang-nhap.php');
 }
 
 ?>
@@ -54,16 +54,16 @@ if (isset($_POST['logouts'])) {
                                 <?php
                                 if (isset($_SESSION['admin_id'])) {
                                     $admin_id = $_SESSION['admin_id'];
-                                    $select_user = mysqli_query($conn, "SELECT * FROM users WHERE id = '$admin_id'") or die('query failed');
-                                    $select_users = mysqli_fetch_assoc($select_user);
-                                    $user_id = $select_users['id'];
+                                    $select_admin = mysqli_query($conn, "SELECT * FROM thu_thu WHERE id = '$admin_id'") or die('query failed');
+                                    $select_admins = mysqli_fetch_assoc($select_admin);
+                                    $admin_id = $select_admins['id'];
                                 ?>
-                                    <a href="../../admin/user-admin/users.php?id=<?php echo $user_id; ?>">Settings <i class="ti-settings"></i></a>
+                                    <a href="../../admin/user-admin/users.php?id=<?php echo $admin_id; ?>">Settings <i class="ti-settings"></i></a>
                                 <?php
                                 }
                                 ?>
                                 <form action="" method="post">
-                                   <a href="../../dang_nhap.php"> <input type="submit" value="Log Out" name="logouts"> <i class="ti-shift-left"></i></a>
+                                   <a href="../../dang-nhap.php"> <input type="submit" value="Log Out" name="logouts"> <i class="ti-shift-left"></i></a>
                                 </form>
                             </div>
                         </div>
