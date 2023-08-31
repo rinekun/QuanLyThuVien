@@ -39,6 +39,28 @@ if (isset($_POST['logouts'])) {
                         <li><a href="../../admin/loai/listType.php">Danh Sách Loại</a></li>
                     </ul>
                 </li>
+
+                <li><a href="#">Tác giả</a>
+                    <ul>
+                        <li><a href="../../admin/tac_gia/addTG.php">Thêm Tác Giả</a></li>
+                        <li><a href="../../admin/tac_gia/listTG.php">Danh Tác Giả</a></li>
+                    </ul>
+                </li>
+
+                 <li><a href="#">Ngôn ngữ</a>
+                    <ul>
+                        <li><a href="../../admin/ngon_ngu/addNgonNgu.php">Thêm ngôn ngữ</a></li>
+                        <li><a href="../../admin/ngon_ngu/listNgonNgu.php">Danh ngôn ngữ</a></li>
+                    </ul>
+                </li>
+
+                 <li><a href="#">NXB</a>
+                    <ul>
+                        <li><a href="../../admin/nxb/addNXB.php">Thêm Nhà Xuất Bản</a></li>
+                        <li><a href="../../admin/nxb/listNXB.php">Danh Nhà Xuất Bản</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="#">Sản phẩm</a>
                     <ul>
                         <li><a href="../../admin/san-pham/addProduct.php">Thêm sản phẩm</a></li>
@@ -54,13 +76,13 @@ if (isset($_POST['logouts'])) {
                     </ul>
                 </li> -->
 
-                <li><a href="#">Kho Sản Phẩm</a>
+                <!-- <li><a href="#">Kho Sản Phẩm</a>
                     <ul>
                         <li><a href="../../admin/kho-san-pham/listWarehouse.php">Kho</a></li>
-                        <!-- <li><a href="../../admin/order/detail.php">Đặt hàng</a></li> -->
+                        <li><a href="../../admin/order/detail.php">Đặt hàng</a></li> 
 
                     </ul>
-                </li>
+                </li> -->
                 <li><a href="#">Đặt Hàng</a>
                     <ul>
                         <li><a href="../../admin/order/listOrder.php">Đặt hàng</a></li>
