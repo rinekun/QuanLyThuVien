@@ -9,8 +9,8 @@ include '../index/nav.php';
 //delete product
 if (isset($_GET['delete'])) {
     $delete_id = $_GET['delete'];
-    mysqli_query($conn, "DELETE FROM `users` WHERE id='$delete_id'") or die('query failed');
-    $message[] = 'user removed successfully';
+    mysqli_query($conn, "DELETE FROM `nguoi_doc` WHERE id='$delete_id'") or die('query failed');
+    echo '<script>alert("Xóa xong rồi ")</script>';
     header('location:listLogin.php');
 }
 
@@ -51,29 +51,19 @@ if (isset($_GET['delete'])) {
                                     <tr>
                                         <th scope="col">STT</th>
                                         <th scope="col">Họ và tên</th>
-                                        <!-- <th scope="col">Loại Hàng</th> -->
-                                        <!-- <th scope="col">Giảm Giá</th> -->
+                                        <th scope="col">Địa chỉ</th>
+                                        <th scope="col">Điện thoại</th> 
                                         <th scope="col">Email</th>
-                                        <!-- <th scope="col">Ngày Đăng</th> -->
-                                        <th scope="col">Vai trò</th>
-                                        <!-- <th scope="col">Đã Bán</th> -->
+                                        <th scope="col">User_name</th>
+                                        <th scope="col">Password</th>
+                                        
 
                                     </tr>
                                 </thead>
 
 
                                 <?php
-                                //  $item_per_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 4;
-                                //  $current_page = !empty($_GET['page']) ? $_GET['page'] : 1;
-
-                                //  $offset = ($current_page - 1) * $item_per_page;
-
-                                $select_users = mysqli_query($conn, "SELECT*FROM `users` ORDER BY `users`.`id`") or die('query failed');
-
-                                // $totalrecords  = mysqli_query($conn, "SELECT*FROM `product`");
-                                //  $totalrecords = $totalrecords->num_rows;
-                                //  $totalrecords = ceil($totalrecords / $item_per_page);
-
+                                $select_users = mysqli_query($conn, "SELECT*FROM `nguoi_doc`") or die('query failed');
                                 $stt = 1;
                                 if (mysqli_num_rows($select_users) > 0) {
                                     while ($fetch_users = mysqli_fetch_assoc($select_users)) {
@@ -83,13 +73,12 @@ if (isset($_GET['delete'])) {
                                         <tbody>
                                             <tr>
                                                 <td class="td"><?= $stt++ ?></td>
-                                                <td class="td"><?php echo $fetch_users['name'] ?></td>
-                                                <!-- <td class="td">Điện thoại</td> -->
+                                                <td class="td"><?php echo $fetch_users['Ho_ten'] ?></td>
+                                                <td class="td"><?php echo $fetch_users['dia_chi'] ?></td>
+                                                <td class="td"><?php echo $fetch_users['dien_thoai'] ?></td>
                                                 <td class="td"><?php echo $fetch_users['email'] ?></td>
-                                                <!-- <td class="td">9000000</td> -->
-                                                <!-- <td class="td">12/02/2023</td>
-                                                <td class="td">22</td> -->
-                                                <td class="td"><?php echo $fetch_users['user_type'] ?></td>
+                                                <td class="td"><?php echo $fetch_users['user_name'] ?></td>
+                                                <td class="td"><?php echo $fetch_users['password'] ?></td>
                                                 <td>
                                                     <a href="updetaLogin.php?edit=<?php echo $fetch_users['id']; ?>" class="status_btn">Edit</a>
                                                     <a href="listLogin.php?delete=<?php echo $fetch_users['id']; ?>" class="status_btn" style="background-color: red;">Delete</a>

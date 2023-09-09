@@ -1,0 +1,282 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/* header {
+    width: 100%;
+    background: #D9D9D9;
+    padding: 0px 3%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.frame_logo {
+    width: 50%;
+    display: flex;
+}
+
+.frame_logo>a {
+    text-decoration: none;
+}
+
+.frame_logo>a>img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.frame_logo>p {
+    margin-top: 3rem;
+    color: #000;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.frames_login {
+    display: flex;
+}
+
+.frames_login>li {
+    display: flex;
+
+}
+
+.frames_login>li>ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.frames_login>a {}
+
+.frames_login>li>ul>a>button {
+    width: 200px;
+    height: 40px;
+    border: none;
+    color: #000;
+    font-family: Inter;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 20px;
+
+}
+
+.frames_login>li>ul>a>button:hover {
+    background-color: aqua;
+    cursor: pointer;
+}
+
+nav {
+    padding: 0px 3%;
+    background: rgba(0, 0, 0, 0.80);
+    width: 100%;
+    border: 1pt solid black;
+}
+
+nav>ul {
+    display: flex;
+    list-style: none;
+}
+
+nav>ul>li {
+    display: block;
+    width: 15%;
+    text-align: center;
+    line-height: 5vw;
+
+    margin-right: 1%;
+
+}
+
+nav>ul>li>a {
+    text-decoration: none;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.frames_bander {
+    width: 100%;
+    height: 550px;
+}
+
+.frames_bander>img {
+    width: 100%;
+    height: 100%;
+} */
+
+
+/* phần thân */
+.frames_information {
+
+    display: flex;
+    margin-top: 5vw;
+}
+
+.frames_folder {
+    width: 40%;
+    padding: 0px 3%;
+
+}
+
+.frames_folder>input {
+    width: 66%;
+    margin: 4vw 0vw;
+    height: 39px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding-left: 10px;
+
+}
+
+.frames_folder>ul {
+    width: 66%;
+    list-style: none;
+    /* text-align: center; */
+
+
+
+
+}
+
+.frames_folder>ul>li {
+    border: 1px solid black;
+    line-height: 50px;
+    padding-left: 25%;
+    text-decoration: none;
+
+}
+
+.frames_folder>ul>li:first-child {
+    border-radius: 10px 10px 0px 0px;
+    background: #BA704F;
+}
+
+.frames_folder>ul>li>a {
+    text-decoration: none;
+    color: #000;
+    font-family: Poppins;
+    font-size: 1.2em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+.frames_list {
+    width: 100%;
+
+}
+
+.frames_list>h1 {
+    margin-bottom: 4vw;
+}
+
+/* PHẦN THONG BÁO */
+.frames_new-notification {
+
+    padding: 0px 3%;
+    margin: 1% 0 0 0;
+}
+
+.frames_images-notification>ul {
+
+    display: flex;
+    width: 100%;
+
+
+}
+
+.frames_images-notification>ul>li {
+    list-style: none;
+    width: 25%;
+    height: 25vh;
+    margin-left: 1%;
+    /* border: 1px solid black; */
+
+}
+
+.frames_images-notification>ul>li>a {
+    text-decoration: none;
+}
+
+.frames_images-notification>ul>li>a>img {
+    width: 100%;
+    height: 100%;
+}
+
+.text_name-notification {
+    width: 100%;
+    margin-top: 3%;
+
+}
+
+.text_name-notification>p {
+
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+
+}
+
+.text_name-notification>p:hover {
+    color: blue;
+}
+
+
+
+
+.img_prodct {
+    width: 35vh;
+    height: 40vh;
+}
+
+.img_prodct>img {
+    width: 100%;
+    height: 100%;
+}
+
+.text_name-product {
+    width: 100%;
+    padding-left: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.text_name-product>h5 {
+    width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.text_name-product>p {
+    width: 250px;
+   display: -webkit-box;
+   -webkit-line-clamp: 5;
+   -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+
+}
